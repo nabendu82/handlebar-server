@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
 const app = express()
-
+const port = process.env.PORT || 3000
 const pubDir = path.join(__dirname, './public')
 const viewsDir = path.join(__dirname, './templates/views')
 const partialsDir = path.join(__dirname, './templates/partials')
@@ -35,6 +35,6 @@ app.get('/help', (req, res) => {
     })
 })
 
-app.listen(8080, () => {
-    console.log('Server is up on port 8080.')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`)
 })
